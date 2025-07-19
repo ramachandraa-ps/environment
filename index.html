@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sustainable Choices: For a Better Tomorrow</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-leaf logo-icon"></i>
+                <span>Sustainable Choices</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#dashboard" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#air-quality"><i class="fas fa-wind"></i> Air Quality</a></li>
+                <li><a href="#renewable-energy"><i class="fas fa-solar-panel"></i> Renewable Energy</a></li>
+                <li><a href="#take-action"><i class="fas fa-hands-helping"></i> Take Action</a></li>
+            </ul>
+            <button class="mobile-menu-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    
+    <header id="dashboard">
+        <div class="header-content">
+            <h1>Sustainable Choices</h1>
+            <p class="tagline">For a Better Tomorrow</p>
+            <div class="header-cta">
+                <a href="#take-action" class="btn btn-primary">Take Action Now</a>
+                <a href="#air-quality" class="btn btn-secondary">Check Air Quality</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section id="air-quality" class="card">
+            <h2>Chennai Air Quality Status</h2>
+            <div class="aqi-display">
+                <div class="aqi-value" id="aqi-indicator">
+                    <span class="aqi-number">70</span>
+                    <span class="aqi-label">Moderate</span>
+                </div>
+                <p class="aqi-impact">Moderate air quality can affect sensitive groups. Let's aim for cleaner air!</p>
+            </div>
+            
+            <div class="aqi-tabs">
+                <div class="tab-header">
+                    <button class="tab-btn active" data-tab="rankings">AQI Rankings</button>
+                    <button class="tab-btn" data-tab="calculator">AQI Calculator</button>
+                    <button class="tab-btn" data-tab="impact">Visual Impact</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-pane active" id="rankings">
+                        <h3>AQI Rankings in Tamil Nadu</h3>
+                        <div class="ranking-container">
+                            <div class="ranking-filters">
+                                <select id="ranking-area">
+                                    <option value="chennai">Chennai Areas</option>
+                                    <option value="tamilnadu">Tamil Nadu Cities</option>
+                                </select>
+                            </div>
+                            
+                            <div class="ranking-table-container">
+                                <table class="ranking-table">
+                                    <thead>
+                                        <tr>
+                                            <th>Rank</th>
+                                            <th>Location</th>
+                                            <th>AQI</th>
+                                            <th>Status</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="ranking-data">
+                                        <!-- Data will be populated by JavaScript -->
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <div class="ranking-legend">
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #4CAF50;"></span>
+                                    <span>Good (0-50)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #FFC107;"></span>
+                                    <span>Moderate (51-100)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #FF9800;"></span>
+                                    <span>Unhealthy for Sensitive Groups (101-150)</span>
+                                </div>
+                                <div class="legend-item">
+                                    <span class="legend-color" style="background-color: #F44336;"></span>
+                                    <span>Unhealthy (151-200)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="calculator">
+                        <h3>Calculate Air Quality Index</h3>
+                        <p class="calculator-intro">Enter pollutant values to calculate the AQI for your area:</p>
+                        
+                        <div class="calculator-form">
+                            <div class="form-group">
+                                <label for="pm25">PM2.5 (μg/m³):</label>
+                                <input type="number" id="pm25" min="0" placeholder="0-500">
+                            </div>
+                            <div class="form-group">
+                                <label for="pm10">PM10 (μg/m³):</label>
+                                <input type="number" id="pm10" min="0" placeholder="0-600">
+                            </div>
+                            <div class="form-group">
+                                <label for="o3">Ozone (O₃) (ppb):</label>
+                                <input type="number" id="o3" min="0" placeholder="0-500">
+                            </div>
+                            <div class="form-group">
+                                <label for="co">Carbon Monoxide (CO) (ppm):</label>
+                                <input type="number" id="co" min="0" placeholder="0-50">
+                            </div>
+                            <div class="form-group">
+                                <label for="so2">Sulfur Dioxide (SO₂) (ppb):</label>
+                                <input type="number" id="so2" min="0" placeholder="0-500">
+                            </div>
+                            <div class="form-group">
+                                <label for="no2">Nitrogen Dioxide (NO₂) (ppb):</label>
+                                <input type="number" id="no2" min="0" placeholder="0-500">
+                            </div>
+                            
+                            <button id="calculate-aqi" class="btn btn-primary">Calculate AQI</button>
+                        </div>
+                        
+                        <div class="calculator-result" id="aqi-result">
+                            <div class="result-header">Your Calculated AQI</div>
+                            <div class="result-value">--</div>
+                            <div class="result-label">Enter values and calculate</div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-pane" id="impact">
+                        <h3>The Impact of Renewable Energy</h3>
+                        <div class="comparison-container">
+                            <div class="comparison-item">
+                                <div class="comparison-image pollution-image"></div>
+                                <p>Polluted Air (Before)</p>
+                            </div>
+                            <div class="arrow">→</div>
+                            <div class="comparison-item">
+                                <div class="comparison-image clean-image"></div>
+                                <p>Clean Air (With Renewables)</p>
+                            </div>
+                        </div>
+                        <button id="toggle-view" class="btn btn-secondary">See the Difference</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="pollution-section" class="card">
+            <h2>Pollution Trends</h2>
+            <p>Air Quality Index (AQI) trends for the past 6 months in your area:</p>
+            <div class="chart-container">
+                <canvas id="pollutionChart"></canvas>
+            </div>
+            <p class="insight">Insight: Air quality has improved by 15% since renewable energy initiatives began in this region.</p>
+        </section>
+
+        <section id="india-renewable" class="card">
+            <h2>Renewable Energy Potential for India</h2>
+            <div class="india-stat">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f1ee-1f1f3.svg" alt="India Flag" class="india-icon">
+                <div class="stat-content">
+                    <h3 class="stat-highlight">India is the world's 3rd largest renewable energy producer</h3>
+                    <p class="stat-detail">As of October 2024, India's renewable capacity is over 200 GW!</p>
+                    <p class="stat-impact">This massive growth helps combat pollution and secures a sustainable future for Chennai and all of India.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="renewable-section" class="card">
+            <h2>Renewable Energy Solutions</h2>
+            <div class="energy-types">
+                <div class="energy-card">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2600.svg" alt="Solar Energy" class="energy-icon">
+                    <h3>Solar Energy</h3>
+                    <p>Harnesses the sun's power through photovoltaic cells, producing clean electricity with zero emissions.</p>
+                    <p class="energy-fact">Did you know? The amount of solar energy that reaches Earth in one hour could meet global energy needs for an entire year!</p>
+                </div>
+                <div class="energy-card">
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f32c.svg" alt="Wind Energy" class="energy-icon">
+                    <h3>Wind Energy</h3>
+                    <p>Converts kinetic energy from wind into electricity using turbines, providing sustainable power for communities.</p>
+                    <p class="energy-fact">Wind energy can reduce carbon emissions by up to 99% compared to fossil fuels.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="take-action" class="card">
+            <h2>Take Action Now</h2>
+            <p class="action-intro">Simple steps you can take today to make Chennai and India more sustainable:</p>
+            <ul class="action-list">
+                <li>
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f68c.svg" alt="Bus" class="action-icon">
+                    <div class="action-content">
+                        <p>Choose public transport or cycle for shorter commutes</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f50c.svg" alt="Plug" class="action-icon">
+                    <div class="action-content">
+                        <p>Switch to energy-efficient appliances (5-star rated)</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f333.svg" alt="Tree" class="action-icon">
+                    <div class="action-content">
+                        <p>Plant a tree in your community or home</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/267b.svg" alt="Recycle" class="action-icon">
+                    <div class="action-content">
+                        <p>Reduce, Reuse, Recycle: Minimize waste</p>
+                    </div>
+                </li>
+                <li>
+                    <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f4b3.svg" alt="Card" class="action-icon">
+                    <div class="action-content">
+                        <p>Support businesses that use renewable energy</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        
+        <section id="daily-challenge" class="card">
+            <h2>Daily Eco-Challenge</h2>
+            <div class="challenge-intro">
+                <img src="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/1f3c6.svg" alt="Trophy" class="challenge-icon">
+                <div>
+                    <h3>Make a difference every day!</h3>
+                    <p>Complete these small tasks to contribute to a greener Chennai and track your progress.</p>
+                </div>
+            </div>
+            
+            <div class="daily-tasks">
+                <div class="task-date">
+                    <span id="current-date">Today's Date</span>
+                    <button id="refresh-task" class="refresh-button">New Challenge</button>
+                </div>
+                
+                <div class="task-card" id="daily-task">
+                    <h3 id="task-title">Your Daily Challenge</h3>
+                    <p id="task-description">Loading your eco-challenge...</p>
+                    <div class="task-footer">
+                        <span class="task-impact">Impact: <span id="task-impact-value">Medium</span></span>
+                        <button id="complete-task" class="task-button">Mark Complete</button>
+                    </div>
+                </div>
+                
+                <div class="task-stats">
+                    <div class="stat-item">
+                        <span class="stat-value" id="tasks-completed">0</span>
+                        <span class="stat-label">Tasks Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="streak-count">0</span>
+                        <span class="stat-label">Day Streak</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="impact-score">0</span>
+                        <span class="stat-label">Impact Points</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="completed-tasks">
+                <h3>Recently Completed</h3>
+                <ul id="completed-list">
+                    <li class="no-tasks">No tasks completed yet. Start your eco-journey today!</li>
+                </ul>
+            </div>
+        </section>
+        
+        <section id="tips-section" class="card">
+            <h2>Tips for Sustainability</h2>
+            <ul class="tips-list">
+                <li>
+                    <span class="tip-number">01</span>
+                    <div class="tip-content">
+                        <h3>Reduce Single-Use Plastics</h3>
+                        <p>Switch to reusable water bottles, shopping bags, and food containers to minimize plastic waste.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tip-number">02</span>
+                    <div class="tip-content">
+                        <h3>Support Renewable Energy</h3>
+                        <p>Consider switching to a green energy provider or installing solar panels if possible.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tip-number">03</span>
+                    <div class="tip-content">
+                        <h3>Conserve Energy</h3>
+                        <p>Turn off lights and unplug devices when not in use to reduce your carbon footprint.</p>
+                    </div>
+                </li>
+                <li>
+                    <span class="tip-number">04</span>
+                    <div class="tip-content">
+                        <h3>Choose Sustainable Transportation</h3>
+                        <p>Walk, bike, carpool, or use public transportation whenever possible.</p>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Sustainable Choices | Created for a better tomorrow</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
