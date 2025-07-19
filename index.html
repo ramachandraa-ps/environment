@@ -31,13 +31,27 @@
     </nav>
     
     <header id="dashboard">
+        <div class="header-overlay"></div>
         <div class="header-content">
-            <h1>Sustainable Choices</h1>
-            <p class="tagline">For a Better Tomorrow</p>
-            <div class="header-cta">
-                <a href="#take-action" class="btn btn-primary">Take Action Now</a>
-                <a href="#air-quality" class="btn btn-secondary">Check Air Quality</a>
+            <div class="header-text-container">
+                <h1>Sustainable <span class="highlight">Choices</span></h1>
+                <p class="tagline">For a Better Tomorrow <span class="emoji-accent">🌍</span></p>
+                <div class="header-cta">
+                    <a href="#take-action" class="btn btn-primary"><i class="fas fa-bolt"></i> Take Action Now</a>
+                    <a href="#air-quality" class="btn btn-secondary"><i class="fas fa-wind"></i> Check Air Quality</a>
+                </div>
             </div>
+            <div class="floating-elements">
+                <div class="float-item" style="--delay: 0s;"><i class="fas fa-leaf"></i></div>
+                <div class="float-item" style="--delay: 2s;"><i class="fas fa-sun"></i></div>
+                <div class="float-item" style="--delay: 4s;"><i class="fas fa-water"></i></div>
+                <div class="float-item" style="--delay: 6s;"><i class="fas fa-seedling"></i></div>
+                <div class="float-item" style="--delay: 8s;"><i class="fas fa-tree"></i></div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <i class="fas fa-chevron-down"></i>
         </div>
     </header>
 
@@ -327,7 +341,49 @@
     </main>
 
     <footer>
-        <p>&copy; 2025 Sustainable Choices | Created for a better tomorrow</p>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <i class="fas fa-leaf logo-icon"></i>
+                <span>Sustainable Choices</span>
+            </div>
+            
+            <div class="footer-links">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#dashboard">Home</a></li>
+                        <li><a href="#air-quality">Air Quality</a></li>
+                        <li><a href="#renewable-energy">Renewable Energy</a></li>
+                        <li><a href="#take-action">Take Action</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">About Air Quality</a></li>
+                        <li><a href="#">Renewable Energy Guide</a></li>
+                        <li><a href="#">Sustainability Tips</a></li>
+                        <li><a href="#">Community Projects</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; 2025 Sustainable Choices | Created for a better tomorrow</p>
+            <p>Data sources: Central Pollution Control Board, Ministry of New and Renewable Energy</p>
+        </div>
     </footer>
 
     <script src="script.js"></script>
