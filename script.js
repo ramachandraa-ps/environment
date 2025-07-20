@@ -349,54 +349,94 @@ document.addEventListener('DOMContentLoaded', function() {
 ly Eco-Challenge Functionality
 const dailyTasks = [
     {
+        title: "Use Chennai Metro",
+        description: "Take the Chennai Metro Rail for your commute today instead of driving. The metro reduces traffic congestion and air pollution in the city.",
+        impact: "High"
+    },
+    {
+        title: "Plant a Native Tree",
+        description: "Plant a native Tamil Nadu tree species like Neem, Peepal, or Banyan in your community. These trees are adapted to local conditions and support biodiversity.",
+        impact: "High"
+    },
+    {
+        title: "Beach Cleanup",
+        description: "Spend 30 minutes collecting plastic waste at Marina Beach or Elliot's Beach. Chennai's coastline needs protection from plastic pollution.",
+        impact: "High"
+    },
+    {
+        title: "Water Conservation",
+        description: "Chennai faces water scarcity issues. Collect and reuse greywater from your kitchen or bathroom for watering plants today.",
+        impact: "Medium"
+    },
+    {
         title: "Use Public Transportation",
-        description: "Skip the car today and use public transportation, walk, or cycle for your commute. This reduces carbon emissions and air pollution.",
+        description: "Skip the car today and use Chennai's MTC buses or share an auto-rickshaw for your commute. This reduces carbon emissions and air pollution.",
         impact: "High"
     },
     {
         title: "Plant or Water a Plant",
-        description: "Plant a new sapling or water plants in your home or community. Plants absorb CO2 and release oxygen, improving air quality.",
+        description: "Plant a new sapling or water plants in your home or community. Plants absorb CO2 and release oxygen, improving Chennai's air quality.",
         impact: "Medium"
     },
     {
         title: "Reduce Water Usage",
-        description: "Take shorter showers, fix leaky taps, and collect rainwater for plants. Water conservation is crucial for sustainability.",
+        description: "Take shorter showers, fix leaky taps, and collect rainwater for plants. Water conservation is crucial for Chennai's sustainability.",
         impact: "Medium"
     },
     {
         title: "Go Plastic-Free Today",
-        description: "Avoid single-use plastics completely for one day. Use reusable bags, bottles, and containers instead.",
+        description: "Avoid single-use plastics completely for one day. Use reusable bags, bottles, and containers instead when shopping at local markets.",
         impact: "High"
     },
     {
         title: "Energy-Saving Hour",
-        description: "Turn off all non-essential electrical appliances for one hour. Unplug devices that aren't in use to reduce phantom energy usage.",
+        description: "Turn off all non-essential electrical appliances for one hour. Unplug devices that aren't in use to reduce phantom energy usage and help reduce Tamil Nadu's energy demand.",
         impact: "Medium"
     },
     {
-        title: "Waste Audit",
-        description: "Analyze your trash for one day and identify ways to reduce waste. Separate recyclables and compostables properly.",
+        title: "Waste Segregation",
+        description: "Properly segregate your waste into biodegradable and non-biodegradable categories today, following Chennai Corporation's waste management guidelines.",
         impact: "Medium"
     },
     {
         title: "Local Food Challenge",
-        description: "Buy only locally produced food today. This reduces carbon emissions from transportation and supports local farmers.",
+        description: "Buy only locally produced Tamil Nadu food today from farmers markets. This reduces carbon emissions from transportation and supports local farmers.",
         impact: "Medium"
     },
     {
         title: "Digital Cleanup",
-        description: "Delete unnecessary emails, files, and apps. Digital storage consumes energy in data centers.",
+        description: "Delete unnecessary emails, files, and apps. Digital storage consumes energy in data centers, contributing to carbon emissions.",
         impact: "Low"
     },
     {
         title: "Educate Someone",
-        description: "Share a fact about sustainability or renewable energy with a friend or family member. Spreading awareness creates change.",
+        description: "Share a fact about Chennai's air quality or renewable energy initiatives with a friend or family member. Spreading awareness creates change.",
         impact: "Medium"
     },
     {
-        title: "Meat-Free Day",
-        description: "Eat plant-based meals for the entire day. Reducing meat consumption lowers your carbon footprint significantly.",
+        title: "Vegetarian Tamil Meal",
+        description: "Enjoy a traditional Tamil vegetarian meal today. Tamil Nadu's plant-based cuisine is delicious and has a lower carbon footprint than meat-based meals.",
+        impact: "Medium"
+    },
+    {
+        title: "Support Local Eco-Friendly Business",
+        description: "Purchase a product from a Chennai-based business that uses sustainable practices or sells eco-friendly products.",
+        impact: "Medium"
+    },
+    {
+        title: "Rainwater Harvesting Check",
+        description: "Inspect your home's rainwater harvesting system or advocate for one in your apartment complex. Rainwater harvesting is mandatory in Chennai and crucial for water security.",
         impact: "High"
+    },
+    {
+        title: "Cycle to Nearby Places",
+        description: "Use a bicycle for short trips within your neighborhood today. Cycling reduces emissions and helps improve Chennai's air quality.",
+        impact: "Medium"
+    },
+    {
+        title: "Terrace Gardening",
+        description: "Start or maintain a small garden on your terrace or balcony. Urban gardening helps reduce the urban heat island effect in Chennai.",
+        impact: "Medium"
     },
     {
         title: "Collect Litter",
